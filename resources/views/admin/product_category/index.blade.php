@@ -1,8 +1,5 @@
 <x-app-layout>
-    <div class="p-6 m-6 w-full bg-white rounded-lg">
-        <h1 class="">Product Category</h1>
-        
+    <div class="bg-white p-8 m-8 rounded-md w-full">
         @livewire('admin.product-category.category-list')
     </div>
-
 </x-app-layout>

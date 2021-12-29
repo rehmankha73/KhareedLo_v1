@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-require __DIR__.'/auth.php';
-
 Route::get('/dashboard', static function () {
     return view('admin.dashboard');
 })->name('dashboard');
