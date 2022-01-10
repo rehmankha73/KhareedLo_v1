@@ -16,11 +16,13 @@
                        placeholder="search...">
             </div>
             <div class="lg:ml-40 ml-10 space-x-8">
-                <button
+                <x-button
+                    type="button"
                     wire:click="showModal"
-                    class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semi-bold tracking-wide cursor-pointer">
+                    class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semi-bold tracking-wide cursor-pointer"
+                >
                     Create New Category
-                </button>
+                </x-button>
             </div>
         </div>
     </div>
@@ -169,7 +171,6 @@
         </div>
     </div>
 
-
     {{--Modal--}}
     @if($displayModal)
         <div
@@ -196,12 +197,17 @@
                     <div class="my-5 mr-5 ml-5 flex justify-center">
                         <form class="w-full">
                             <div class="">
+                                <x-k-input-field
+                                    type="text"
+                                    name="name"
+                                    class="border-2"
+                                    wire:model="name"
+                                />
                                 <div class="">
                                     <label for="name" class="text-md text-gray-600">Name</label>
                                 </div>
                                 <div class="">
                                     <input
-                                        wire:model="name"
                                         type="text" id="name" autocomplete="off" name="name"
                                         class="h-2 p-4 w-full border-2 border-gray-300 mb-2 rounded-md @error('name') border-red-600 @enderror"
                                         placeholder="Please Enter Product Category Name">
@@ -242,7 +248,6 @@
             </div>
         </div>
     @endif
-
 
     {{--Delete Modal--}}
     @if($displayDeleteModal)
@@ -286,6 +291,5 @@
             </div>
         </div>
     @endif
-
 </div>
 

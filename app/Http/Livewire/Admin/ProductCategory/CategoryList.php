@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class CategoryList extends Component
 {
     use WithPagination;
+
     public $displayModal = false;
     public $displayDeleteModal = false;
     public $deleteId;
