@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
@@ -162,5 +162,7 @@
 </div>
 
 @livewireScripts
+
+@livewire('livewire-ui-modal')
 </body>
 </html>
