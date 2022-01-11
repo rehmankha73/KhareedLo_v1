@@ -8,22 +8,29 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Product extends Model implements HasMedia
+class Product extends Model
 {
     use HasFactory;
-    use InteractsWithMedia;
 
     protected $fillable = [
-        'product_category_id',
         'product_code',
         'name',
         'description',
-        'price',
+        'unit_price',
         'wholesale_price',
-        'discount',
-        'stock',
-        'mini_stock',
-        'in_stock'
+        'initial_stock',
+        'current_stock',
+        'in_stock',
+        'featured_image',
+        'image_1',
+        'image_2',
+        'image_3',
+        'image_4',
+
+        // Seo related tags
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
     ];
 
     protected $casts = [

@@ -197,12 +197,6 @@
                     <div class="my-5 mr-5 ml-5 flex justify-center">
                         <form class="w-full">
                             <div class="">
-                                <x-k-input-field
-                                    type="text"
-                                    name="name"
-                                    class="border-2"
-                                    wire:model="name"
-                                />
                                 <div class="">
                                     <label for="name" class="text-md text-gray-600">Name</label>
                                 </div>

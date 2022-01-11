@@ -14,15 +14,19 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'product_code' => random_int(000000,999999),
+            'product_code'  => random_int(000000,999999),
             'name' => $this->faker->name,
             'description' => $this->faker->sentence,
-            'price' => random_int(1,1000),
+            'unit_price' => random_int(1,1000),
             'wholesale_price' => random_int(1,1000),
-            'discount' => random_int(1,100),
-            'stock' => random_int(1,1000),
-            'mini_stock' => random_int(1,1000),
+            'initial_stock' => random_int(1,1000),
+            'current_stock' => random_int(1,1000),
             'in_stock' => $this->faker->boolean,
+            'featured_image' => $this->faker->imageUrl,
+            'image_1' => $this->faker->imageUrl,
+            'image_2' => $this->faker->imageUrl,
+            'image_3' => $this->faker->imageUrl,
+            'image_4' => $this->faker->imageUrl,
         ];
     }
 }

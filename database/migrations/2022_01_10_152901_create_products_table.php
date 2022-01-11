@@ -25,13 +25,17 @@ class CreateProductsTable extends Migration
             $table->string('product_code');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->decimal('price')->default(0.0);
+            $table->decimal('unit_price')->default(0.0);
             $table->decimal('wholesale_price')->default(0.0);
-            $table->decimal('discount')->default(0.0);
-            $table->unsignedInteger('stock')->default(0);
-            $table->unsignedInteger('mini_stock')->default(10);
+            $table->unsignedInteger('initial_stock')->default(0);
+            $table->unsignedInteger('current_stock')->default(10);
 
             $table->boolean('in_stock')->default(true);
+            $table->string('featured_image')->nullable();
+            $table->string('image_1')->nullable();
+            $table->string('image_2')->nullable();
+            $table->string('image_3')->nullable();
+            $table->string('image_4')->nullable();
 
             // Seo related tags
             $table->string('meta_title')->nullable();
