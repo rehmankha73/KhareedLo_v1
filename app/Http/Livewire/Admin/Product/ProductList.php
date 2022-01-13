@@ -11,7 +11,6 @@ class ProductList extends Component
 {
     use WithPagination;
 
-    public $displayModal = false;
     public $displayDeleteModal = false;
     public $deleteId;
     public $sortByField;
@@ -21,9 +20,9 @@ class ProductList extends Component
     public $name;
     public $description;
 
-    public $success_message = '';
 
     protected $queryString = ['search'];
+
 
     public function render()
     {
@@ -35,6 +34,20 @@ class ProductList extends Component
 
     private function getProducts(): LengthAwarePaginator
     {
-        return Product::query()->with('product_category')->paginate(5);
+        return Product::query()->with('product_category')->latest()->paginate(5);
+    }
+
+    public function showDeleteModal($id = null) {
+        if($id) {
+            $this->deleteId = (int)$id;
+        }
+        $this->displayDeleteModal= true;
+    }
+
+    public function deleteProduct() {
+        Product::find($this->deleteId)->delete();
+        session()->flash('success_message', 'Product deleted successfully!');
+        $this->displayDeleteModal = false;
+
     }
 }

@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->decimal('unit_price')->default(0.0);
-            $table->decimal('wholesale_price')->default(0.0);
+            $table->decimal('whole_sale_price')->default(0.0);
             $table->unsignedInteger('initial_stock')->default(0);
             $table->unsignedInteger('current_stock')->default(10);
 

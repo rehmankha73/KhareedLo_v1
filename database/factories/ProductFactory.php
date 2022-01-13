@@ -18,7 +18,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->name,
             'description' => $this->faker->sentence,
             'unit_price' => random_int(1,1000),
-            'wholesale_price' => random_int(1,1000),
+            'whole_sale_price' => random_int(1,1000),
             'initial_stock' => random_int(1,1000),
             'current_stock' => random_int(1,1000),
             'in_stock' => $this->faker->boolean,

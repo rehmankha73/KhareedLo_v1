@@ -13,7 +13,6 @@ class ProductController extends Controller
         return view('admin.product.index');
     }
 
-
     public function create()
     {
         return view('admin.product.create');
@@ -26,6 +25,6 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('admin.product.edit');
+        return view('admin.product.edit', ['product' => $product]);
     }
 }

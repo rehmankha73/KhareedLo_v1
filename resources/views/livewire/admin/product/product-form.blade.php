@@ -19,11 +19,18 @@
                                         <div class="col-span-4">
                                             <label for="category" class="block text-sm font-medium text-gray-700">Product
                                                 Category
-                                                <select wire:model="product_category_id">
+                                                <select
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('product_category_id') border-red-600 @enderror"
+                                                    wire:model="product_category_id"
+                                                >
+                                                    <option value="" selected> Please Select a Category</option>
                                                     @foreach($categories as $category)
                                                         {{ $category }}
-{{--                                                        <option--}}
-{{--                                                            value="{{ $category['id'] }}">{{ $categoryname }}</option>--}}
+                                                        <option
+                                                            value="{{ $category->id }}"
+                                                        >
+                                                            {{ $category->name }}
+                                                        </option>
                                                     @endforeach
                                                 </select>
                                             </label>
@@ -54,9 +61,9 @@
                                             @enderror
 
                                             <div class="my-4">
-                                                @if (is_string($featured_image))
+                                                @if (is_string($featured_image_url))
                                                     <img style="width: 250px;height: auto"
-                                                         src="{{ Storage::url($featured_bg_image) }}">
+                                                         src="{{ Storage::url($featured_image_url) }}">
                                                 @elseif($featured_image)
                                                     <img style="width: 250px;height: auto"
                                                          src="{{ $featured_image->temporaryUrl() }}">
@@ -132,9 +139,9 @@
                                             @enderror
 
                                             <div class="my-4">
-                                                @if (is_string($image_1))
+                                                @if (is_string($image_1_url))
                                                     <img style="width: 250px;height: auto"
-                                                         src="{{ Storage::url($image_1) }}">
+                                                         src="{{ Storage::url($image_1_url) }}">
                                                 @elseif($image_1)
                                                     <img style="width: 250px;height: auto"
                                                          src="{{ $image_1->temporaryUrl() }}">
@@ -151,9 +158,9 @@
                                             @enderror
 
                                             <div class="my-4">
-                                                @if (is_string($image_2))
+                                                @if (is_string($image_2_url))
                                                     <img style="width: 250px;height: auto"
-                                                         src="{{ Storage::url($image_2) }}">
+                                                         src="{{ Storage::url($image_2_url) }}">
                                                 @elseif($image_2)
                                                     <img style="width: 250px;height: auto"
                                                          src="{{ $image_2->temporaryUrl() }}">
@@ -170,9 +177,9 @@
                                             @enderror
 
                                             <div class="my-4">
-                                                @if (is_string($image_3))
+                                                @if (is_string($image_3_url))
                                                     <img style="width: 250px;height: auto"
-                                                         src="{{ Storage::url($image_3) }}">
+                                                         src="{{ Storage::url($image_3_url) }}">
                                                 @elseif($image_3)
                                                     <img style="width: 250px;height: auto"
                                                          src="{{ $image_3->temporaryUrl() }}">
@@ -189,9 +196,9 @@
                                             @enderror
 
                                             <div class="my-4">
-                                                @if (is_string($image_4))
+                                                @if (is_string($image_4_url))
                                                     <img style="width: 250px;height: auto"
-                                                         src="{{ Storage::url($image_4) }}">
+                                                         src="{{ Storage::url($image_4_url) }}">
                                                 @elseif($image_4)
                                                     <img style="width: 250px;height: auto"
                                                          src="{{ $image_4->temporaryUrl() }}">
