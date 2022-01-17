@@ -15,6 +15,6 @@ Route::get('/dashboard', static function () {
 })->name('dashboard');
 
 Route::resources([
-    'product_categories' => ProductCategoryController::class,
+    'product-categories' => ProductCategoryController::class,
     'products' => ProductController::class,
 ]);

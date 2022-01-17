@@ -2,21 +2,22 @@
     <div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="mt-10 sm:mt-0">
-                <div class="md:grid md:grid-cols-3 md:gap-6">
-                    <div class="md:col-span-1">
-                        <div class="px-4 sm:px-0">
-                            <h3 class="text-lg font-medium leading-6 text-gray-900">Add New Product</h3>
-                            <p class="mt-1 text-sm text-gray-600">
-                                Use a permanent address where you can receive mail.
-                            </p>
+                <form wire:submit.prevent="submitForm">
+
+                    <div class="md:grid md:grid-cols-3 md:gap-6">
+                        <div class="md:col-span-1">
+                            <div class="px-4 sm:px-0">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900">Product Details</h3>
+                                <p class="mt-1 text-sm text-gray-600">
+                                    Use a permanent address where you can receive mail.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mt-5 md:mt-0 md:col-span-2">
-                        <form wire:submit.prevent="submitForm">
+                        <div class="mt-5 md:mt-0 md:col-span-2">
                             <div class="shadow overflow-hidden sm:rounded-md">
                                 <div class="px-4 py-5 bg-white sm:p-6">
                                     <div class="grid grid-cols-4 gap-6">
-                                        <div class="col-span-4">
+                                        <div class="col-span-2">
                                             <label for="category" class="block text-sm font-medium text-gray-700">Product
                                                 Category
                                                 <select
@@ -35,6 +36,17 @@
                                                 </select>
                                             </label>
                                             @error('name')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-span-2">
+                                            <label for="name"
+                                                   class="block text-sm font-medium text-gray-700">Brand</label>
+                                            <input wire:model.defer="brand" type="text" name="brand" id="brand"
+                                                   placeholder="Product Brand"
+                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('brand') border-red-600 @enderror">
+                                            @error('brand')
                                             <span class="text-red-600">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -69,65 +81,6 @@
                                                          src="{{ $featured_image->temporaryUrl() }}">
                                                 @endif
                                             </div>
-                                        </div>
-
-                                        <div class="col-span-4">
-                                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                                            <textarea wire:model.defer="description" rows="3" name="description"
-                                                      id="description"
-                                                      class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('description') border-red-600 @enderror">
-                                                {{ $description }}
-                                            </textarea>
-                                            @error('description')
-                                            <span class="text-red-600">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-span-2">
-                                            <label for="unit_price" class="block text-sm font-medium text-gray-700">Unit
-                                                Price</label>
-                                            <input wire:model.defer="unit_price" type="number" min="1" name="unit_price"
-                                                   id="unit_price" placeholder="Unit Price for product"
-                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('unit_price') border-red-600 @enderror">
-                                            @error('unit_price')
-                                            <span class="text-red-600">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-span-2">
-                                            <label for="whole_sale_price"
-                                                   class="block text-sm font-medium text-gray-700">Whole Sale
-                                                Price</label>
-                                            <input wire:model.defer="whole_sale_price" type="number" min="1"
-                                                   name="whole_sale_price" id="whole_sale_price"
-                                                   placeholder="Whole Sale Price"
-                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('whole_sale_price') border-red-600 @enderror">
-                                            @error('whole_sale_price')
-                                            <span class="text-red-600">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-span-2">
-                                            <label for="initial_stock" class="block text-sm font-medium text-gray-700">Initial
-                                                Stock</label>
-                                            <input wire:model.defer="initial_stock" type="number" min="1"
-                                                   name="initial_stock" id="initial_stock" placeholder="Initial Stock"
-                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('initital_stock') border-red-600 @enderror">
-                                            @error('initial_stock')
-                                            <span class="text-red-600">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-span-2">
-                                            <label for="current_stock" class="block text-sm font-medium text-gray-700">Current
-                                                Stock</label>
-                                            <input wire:model.defer="current_stock" type="number" min="1"
-                                                   name="current_stock" id="current_stock"
-                                                   placeholder="Whole Sale Price"
-                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('current_stock') border-red-600 @enderror">
-                                            @error('current_stock')
-                                            <span class="text-red-600">{{ $message }}</span>
-                                            @enderror
                                         </div>
 
                                         <div class="col-span-1">
@@ -205,6 +158,90 @@
                                                 @endif
                                             </div>
                                         </div>
+
+                                        <div class="col-span-4">
+                                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                                            <textarea wire:model.defer="description" rows="3" name="description"
+                                                      id="description"
+                                                      class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('description') border-red-600 @enderror">
+                                                {{ $description }}
+                                            </textarea>
+                                            @error('description')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+{{--                                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">--}}
+{{--                                    <button type="submit"--}}
+{{--                                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">--}}
+{{--                                        Add Product--}}
+{{--                                    </button>--}}
+{{--                                </div>--}}
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-1">
+                            <div class="px-4 sm:px-0">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900">Product Prices & Stock</h3>
+                                <p class="mt-1 text-sm text-gray-600">
+                                    Use a permanent address where you can receive mail.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-5 md:mt-0 md:col-span-2">
+                            <div class="shadow overflow-hidden sm:rounded-md">
+                                <div class="px-4 py-5 bg-white sm:p-6">
+                                    <div class="grid grid-cols-4 gap-6">
+
+                                        <div class="col-span-2">
+                                            <label for="unit_price" class="block text-sm font-medium text-gray-700">Unit
+                                                Price</label>
+                                            <input wire:model.defer="unit_price" type="number" min="1" name="unit_price"
+                                                   id="unit_price" placeholder="Unit Price for product"
+                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('unit_price') border-red-600 @enderror">
+                                            @error('unit_price')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-span-2">
+                                            <label for="whole_sale_price"
+                                                   class="block text-sm font-medium text-gray-700">Whole Sale
+                                                Price</label>
+                                            <input wire:model.defer="whole_sale_price" type="number" min="1"
+                                                   name="whole_sale_price" id="whole_sale_price"
+                                                   placeholder="Whole Sale Price"
+                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('whole_sale_price') border-red-600 @enderror">
+                                            @error('whole_sale_price')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-span-2">
+                                            <label for="initial_stock" class="block text-sm font-medium text-gray-700">Initial
+                                                Stock</label>
+                                            <input wire:model.defer="initial_stock" type="number" min="1"
+                                                   name="initial_stock" id="initial_stock" placeholder="Initial Stock"
+                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('initital_stock') border-red-600 @enderror">
+                                            @error('initial_stock')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-span-2">
+                                            <label for="current_stock" class="block text-sm font-medium text-gray-700">Current
+                                                Stock</label>
+                                            <input wire:model.defer="current_stock" type="number" min="1"
+                                                   name="current_stock" id="current_stock"
+                                                   placeholder="Whole Sale Price"
+                                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('current_stock') border-red-600 @enderror">
+                                            @error('current_stock')
+                                            <span class="text-red-600">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
                                         <div class="col-span-4">
                                             <label class="inline-flex items-center">
                                                 <input
@@ -218,6 +255,24 @@
                                             </label>
                                         </div>
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="md:col-span-1">
+                            <div class="px-4 sm:px-0">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900">Product Seo</h3>
+                                <p class="mt-1 text-sm text-gray-600">
+                                    Use a permanent address where you can receive mail.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-5 md:mt-0 md:col-span-2">
+                            <div class="shadow overflow-hidden sm:rounded-md">
+                                <div class="px-4 py-5 bg-white sm:p-6">
+                                    <div class="grid grid-cols-4 gap-6">
 
                                         <div class="col-span-2">
                                             <label for="meta_title" class="block text-sm font-medium text-gray-700">Meta
@@ -256,16 +311,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                    <button type="submit"
-                                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                        Add Product
-                                    </button>
-                                </div>
                             </div>
-                        </form>
+
+                            <div class="px-4 py-3 text-right sm:px-6 mt-5">
+                                <button type="submit"
+                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    {{ empty($product) ? 'Add' : 'Update' }} Product
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
+
             </div>
         </div>
     </div>

@@ -17,6 +17,7 @@ class ProductFactory extends Factory
             'product_code'  => random_int(000000,999999),
             'name' => $this->faker->name,
             'description' => $this->faker->sentence,
+            'brand' => $this->faker->word,
             'unit_price' => random_int(1,1000),
             'whole_sale_price' => random_int(1,1000),
             'initial_stock' => random_int(1,1000),

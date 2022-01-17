@@ -29,6 +29,12 @@ class CreateProductsTable extends Migration
             $table->decimal('whole_sale_price')->default(0.0);
             $table->unsignedInteger('initial_stock')->default(0);
             $table->unsignedInteger('current_stock')->default(10);
+            $table->string('brand')->nullable();
+
+            // Product Variants
+            $table->json('colors')->nullable();
+            $table->json('sizes')->nullable();
+            $table->json('others')->nullable();
 
             $table->boolean('in_stock')->default(true);
             $table->string('featured_image')->nullable();

@@ -16,6 +16,7 @@ class ProductForm extends Component
 
     public $name;
     public $description;
+    public $brand;
     public $unit_price;
     public $whole_sale_price;
     public $initial_stock;
@@ -54,6 +55,7 @@ class ProductForm extends Component
     {
         $this->name = $this->product->name;
         $this->description = $this->product->description;
+        $this->brand = $this->product->brand;
         $this->unit_price = $this->product->unit_price;
         $this->whole_sale_price = $this->product->whole_sale_price;
         $this->initial_stock = $this->product->initial_stock;
@@ -154,7 +156,6 @@ class ProductForm extends Component
     }
 
     public function removeImage($field, $image_url) {
-        dd($field, $image_url);
         $this->product->update([$field => '']);
         Storage::delete($image_url);
         $this->render();
@@ -166,6 +167,7 @@ class ProductForm extends Component
             'product_category_id' => ['required', 'exists:product_categories,id'],
             'name' => ['required', 'string', 'min:3'],
             'description' => ['required', 'string', 'min:3'],
+            'brand' => ['required', 'string', 'min:3'],
             'unit_price' => ['required',],
             'whole_sale_price' => ['required',],
             'initial_stock' => ['required', 'numeric'],

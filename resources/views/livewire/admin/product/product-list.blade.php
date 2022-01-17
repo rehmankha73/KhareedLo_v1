@@ -18,11 +18,11 @@
             <div class="lg:ml-40 ml-10 space-x-8">
                 <form action="{{ route('admin.products.create') }}" method="GET">
                     @csrf
-                    <button
+                    <x-button
                         type="submit"
                         class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semi-bold tracking-wide cursor-pointer">
                         Add New Product
-                    </button>
+                    </x-button>
                 </form>
             </div>
         </div>
@@ -320,7 +320,7 @@
                                     </form>
                                     <button
                                         wire:click="showDeleteModal({{ $product->id }})"
-                                        class="bg-red-600 p-2 rounded-md text-white font-semi-bold tracking-wide cursor-pointer">
+                                        class="bg-red-600 p-2 ml-2 rounded-md text-white font-semi-bold tracking-wide cursor-pointer">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
