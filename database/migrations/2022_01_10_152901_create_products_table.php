@@ -32,9 +32,9 @@ class CreateProductsTable extends Migration
             $table->string('brand')->nullable();
 
             // Product Variants
-            $table->json('colors')->nullable();
-            $table->json('sizes')->nullable();
-            $table->json('others')->nullable();
+            $table->text('colors')->nullable();
+            $table->text('sizes')->nullable();
+            $table->text('others')->nullable();
 
             $table->boolean('in_stock')->default(true);
             $table->string('featured_image')->nullable();

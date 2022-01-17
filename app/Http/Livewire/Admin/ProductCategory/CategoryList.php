@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Admin\ProductCategory;
 
+use App\Http\hasDeletion;
+use App\Http\hasSorting;
 use App\Models\ProductCategory;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -10,12 +12,9 @@ use Livewire\WithPagination;
 class CategoryList extends Component
 {
     use WithPagination;
+    use hasSorting;
+    use hasDeletion;
 
-    public $displayModal = false;
-    public $displayDeleteModal = false;
-    public $deleteId;
-    public $sortByField;
-    public $sortByDirectionAsc = true;
     public $category = null;
     public $search;
     public $name;
@@ -59,13 +58,6 @@ class CategoryList extends Component
         $this->displayModal = true;
     }
 
-    public function showDeleteModal($id = null) {
-        if($id) {
-            $this->deleteId = (int)$id;
-        }
-        $this->displayDeleteModal= true;
-    }
-
     public function deleteCategory() {
         ProductCategory::find($this->deleteId)->delete();
         $this->success_message = 'Product category deleted!';
@@ -85,15 +77,6 @@ class CategoryList extends Component
             'name' => ['required', 'string', 'min:3'],
             'description' => ['required', 'string', 'min:3'],
         ];
-    }
-
-    public function sortBy($field)
-    {
-        $this->sortByDirectionAsc = ($this->sortByField === $field) ? !$this->sortByDirectionAsc : true;
-
-        $this->sortByField = $field;
-
-        $this->resetPage();
     }
 
     private function getProductCategories()

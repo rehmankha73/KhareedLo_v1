@@ -33,6 +33,9 @@ class ProductForm extends Component
     public $image_3_url;
     public $image_4;
     public $image_4_url;
+    public $colors;
+    public $sizes;
+    public $others;
     public $meta_title;
     public $meta_keywords;
     public $meta_description;
@@ -67,6 +70,9 @@ class ProductForm extends Component
         $this->image_2_url = $this->product->image_2;
         $this->image_3_url = $this->product->image_3;
         $this->image_4_url = $this->product->image_4;
+        $this->colors = $this->product->colors;
+        $this->sizes = $this->product->sizes;
+        $this->others = $this->product->others;
         $this->meta_title = $this->product->meta_title;
         $this->meta_keywords = $this->product->meta_keywords;
         $this->meta_description = $this->product->meta_description;
@@ -173,6 +179,9 @@ class ProductForm extends Component
             'initial_stock' => ['required', 'numeric'],
             'current_stock' => ['required', 'numeric'],
             'in_stock' => ['required', 'boolean'],
+            'colors' => ['nullable', 'string', 'min:3'],
+            'sizes' => ['nullable', 'string', 'min:3'],
+            'others' => ['nullable', 'string', 'min:3'],
             'meta_title' => ['required', 'string', 'min:3'],
             'meta_keywords' => ['required', 'string', 'min:3'],
             'meta_description' => ['required', 'string', 'min:3'],

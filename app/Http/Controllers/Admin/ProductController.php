@@ -20,11 +20,24 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        return view('admin.product.show');
+        $product->colors = $this->getAttributeInArray($product->colors);
+        $product->sizes = $this->getAttributeInArray($product->sizes);
+        $product->others = $this->getAttributeInArray($product->others);
+
+        return view('admin.product.show', compact('product'));
     }
 
     public function edit(Product $product)
     {
         return view('admin.product.edit', ['product' => $product]);
+    }
+
+    private function getAttributeInArray($attribute) {
+        if(!empty($attribute)) {
+            return explode(",", $attribute);
+        }
+
+        return [];
+
     }
 }
