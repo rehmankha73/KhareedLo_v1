@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -55,6 +57,16 @@ class Product extends Model
             $code .= substr($string, (rand() % (strlen($string))), 1);
         }
         return $code;
+    }
+
+    public function order_details(): HasMany
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class);
     }
 }
 
