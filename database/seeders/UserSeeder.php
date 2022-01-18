@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +25,14 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('secret123'),
                 'email_verified_at' => now(),
                 'remember_token' => now(),
+                'is_admin' => true,
             ]);
         }
+
+        User::factory()
+            ->has(Order::factory()->has(OrderDetail::factory(),'order_details')->count(3)
+                ->count(5), 'orders')
+            ->count(20)
+            ->create();
     }
 }

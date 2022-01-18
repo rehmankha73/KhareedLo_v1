@@ -14,16 +14,5 @@ class Customer extends Model
         'first_name',
         'last_name',
         'email',
-        'country',
-        'address',
-        'city',
-        'state',
-        'postcode',
-        'phone',
     ];
-
-    public function orders(): HasMany
-    {
-        return $this->hasMany(Order::class);
-    }
 }

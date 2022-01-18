@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', static function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('customer_id')
+            $table->foreignId('user_id')
                 ->index()
                 ->nullable()
-                ->constrained('customers')
+                ->constrained('users')
                 ->nullOnDelete();
 
             $table->decimal('sub_total')->default(0.0);
