@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
         if(User::query()->count() === 0) {
             User::query()->create([
                 'name' => 'Rehman Ahmed Khan',
-                'email' => 'rehmankha73@gmail.com',
-                'password' => Hash::make('secret123'),
+                'email' => 'user@user.com',
+                'password' => Hash::make('user'),
                 'email_verified_at' => now(),
                 'remember_token' => now(),
                 'is_admin' => true,

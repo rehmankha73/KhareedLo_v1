@@ -140,8 +140,16 @@
                                         <li>
                                             <hr class="border-t mx-2 border-gray-400">
                                         </li>
-                                        <li><a href="#"
-                                               class="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline">Logout</a>
+                                        <li>
+                                            <form action="{{ route('admin.logout') }}" method="POST">
+                                                @csrf
+                                                <button
+                                                    class="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline"
+                                                    type="submit"
+                                                >
+                                                    Logout
+                                                </button>
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
