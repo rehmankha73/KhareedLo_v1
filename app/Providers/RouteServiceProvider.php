@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    public const USER_HOME = '/dashboard';
+    public const USER_HOME = '/user/dashboard';
 
     public const ADMIN_HOME = '/admin/dashboard';
 
@@ -45,6 +45,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/admin.php'));
 
             Route::middleware('web')
+                ->prefix('/user')
+                ->name('user.')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/user.php'));
 

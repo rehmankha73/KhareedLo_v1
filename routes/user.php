@@ -16,5 +16,5 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/dashboard', static function () {
-    return view('user-dashboard');
+    return view('user.dashboard');
 })->middleware('login:user')->name('dashboard');

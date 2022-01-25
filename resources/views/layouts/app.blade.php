@@ -73,6 +73,7 @@
             </ul>
 
         </div>
+
         <div class="flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
             <div class="h-40 lg:h-20 w-full flex flex-wrap">
                 <nav id="header"
@@ -158,12 +159,15 @@
                         </div>
 
                         <!-- / Menu -->
-
                     </div>
 
                 </nav>
             </div>
+
+            {{--Main Content--}}
             {{ $slot }}
+
+
         </div>
     </main>
 </div>

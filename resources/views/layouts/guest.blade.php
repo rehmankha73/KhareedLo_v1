@@ -19,6 +19,7 @@
 <body>
 <!--Nav-->
 <nav id="header" class="w-full z-30 top-0">
+
     <div class="bg-gray-100 w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
         <label for="menu-toggle" class="cursor-pointer md:hidden block">
@@ -78,7 +79,7 @@
                                         </span>
                     </a>
 
-                    <a href="{{ route('logout') }}"
+                    <a href="{{ route('user.logout') }}"
                        class="inline-block text-sm text-gray-700 dark:text-gray-500 underline flex">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +92,7 @@
                     </a>
                 @else
 
-                    <a href="{{ route('login') }}"
+                    <a href="{{ route('user.login') }}"
                        class="inline-block text-sm text-gray-700 dark:text-gray-500 underline flex">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +104,7 @@
                                         </span>
                     </a>
 
-                    <a href="{{ route('register') }}"
+                    <a href="{{ route('user.register') }}"
                        class="inline-block ml-4 text-sm text-gray-700 dark:text-gray-500 underline flex">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +121,7 @@
 
         </div>
     </div>
-
+    
     <div class="w-full container mx-auto flex flex-wrap items-center justify-center mt-0 px-6">
 
         <div class="">

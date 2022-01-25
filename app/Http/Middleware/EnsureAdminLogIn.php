@@ -22,7 +22,7 @@ class EnsureAdminLogIn
         }
 
         if($type === 'user' && !Auth::check()){
-            return redirect()->route('login');
+            return redirect()->route('user.login');
         }
 
         return $next($request);

@@ -366,4 +366,5 @@
             return false;
         }
     </script>
+
 </x-app-layout>
