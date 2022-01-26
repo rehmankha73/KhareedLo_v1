@@ -16,14 +16,9 @@ class ProductList extends Component
     use hasSorting;
     use hasDeletion;
 
-    public $category = null;
     public $search;
-    public $name;
-    public $description;
-
 
     protected $queryString = ['search'];
-
 
     public function render()
     {

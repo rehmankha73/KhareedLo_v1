@@ -27,6 +27,7 @@
             </div>
         </div>
     </div>
+
     <div>
         {{--Success Message--}}
         @include('layouts.flash_success_message')
@@ -341,12 +342,12 @@
                     </div>
                 </div>
             @else
-                <span class="text-red-500">No Categories found!</span>
+                <span class="text-red-500">No any product found!</span>
             @endif
         </div>
     </div>
 
-{{--    Delete Modal--}}
+    {{--Delete Modal--}}
     @if($displayDeleteModal)
         <div
             class="min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"

@@ -161,7 +161,8 @@ class ProductForm extends Component
         return $data[$name];
     }
 
-    public function removeImage($field, $image_url) {
+    public function removeImage($field, $image_url): void
+    {
         $this->product->update([$field => '']);
         Storage::delete($image_url);
         $this->render();

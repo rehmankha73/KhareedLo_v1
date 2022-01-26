@@ -19,6 +19,7 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'featured_image',
         'name',
         'email',
         'password',
@@ -28,7 +29,6 @@ class User extends Authenticatable
         'state',
         'postcode',
         'phone',
-        'is_admin',
     ];
 
     /**
@@ -48,7 +48,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'is_admin' => 'boolean'
     ];
 
     public function orders(): HasMany

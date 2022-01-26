@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('user'),
                 'email_verified_at' => now(),
                 'remember_token' => now(),
-                'is_admin' => true,
             ]);
         }
 

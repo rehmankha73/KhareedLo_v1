@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\LogoutController;
-use App\Http\Controllers\Admin\ProductCategoryController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Admin\ProductCategory\ProductCategoryController;
+use App\Http\Controllers\Admin\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,6 @@ Route::post('/login', [LoginController::class, 'postLogin'])->name('postLoginFor
 
 Route::post('/logout', LogoutController::class)->middleware('login:admin')->name('logout');
 
-//Route::
-
 
 Route::get('/dashboard', static function () {
     return view('admin.dashboard');
@@ -27,4 +26,5 @@ Route::get('/dashboard', static function () {
 Route::resources([
     'product-categories' => ProductCategoryController::class,
     'products' => ProductController::class,
+    'users' => UserController::class,
 ]);

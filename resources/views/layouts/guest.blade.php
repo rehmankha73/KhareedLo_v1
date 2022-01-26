@@ -66,7 +66,7 @@
                     </svg>
                 </a>
                 @auth
-                    <a href="{{ route('dashboard') }}"
+                    <a href="{{ route('user.dashboard') }}"
                        class="inline-block text-sm text-gray-700 dark:text-gray-500 underline flex">
                         <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24"
                              height="24" viewBox="0 0 24 24">
@@ -75,8 +75,8 @@
                                 d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z"/>
                         </svg>
                         <span class="inline-block">
-                                            Dashboard
-                                        </span>
+                            Dashboard
+                        </span>
                     </a>
 
                     <a href="{{ route('user.logout') }}"
@@ -87,8 +87,8 @@
                                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                         </svg>
                         <span class="inline-block">
-                                            Logout
-                                        </span>
+                            Logout
+                        </span>
                     </a>
                 @else
 
@@ -100,8 +100,8 @@
                                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
                         </svg>
                         <span class="inline-block">
-                                            Log in
-                                        </span>
+                            Log in
+                        </span>
                     </a>
 
                     <a href="{{ route('user.register') }}"
@@ -112,38 +112,16 @@
                                   d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
                         </svg>
                         <span class="inline-block">
-                                            Register
-                                        </span>
+                            Register
+                        </span>
                     </a>
                 @endauth
             </div>
-
-
         </div>
     </div>
-    
-    <div class="w-full container mx-auto flex flex-wrap items-center justify-center mt-0 px-6">
-
-        <div class="">
-            <nav>
-                <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                           href="#">Home</a></li>
-                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                           href="#">Products</a></li>
-                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                           href="#">Services</a></li>
-                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                           href="#">Blog</a></li>
-                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                           href="#">Deals</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
 </nav>
-<div class="w-full container mx-auto mt-0 py-3">
+
+<div class="w-full container mx-auto mt-0">
     {{ $slot }}
 </div>
 
