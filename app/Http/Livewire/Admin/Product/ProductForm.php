@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\Product;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -104,6 +105,8 @@ class ProductForm extends Component
             if ($this->image_4) {
                 $data['image_4'] = $this->checkOrStoreImage('image_4', $this->image_4, $data['product_code']);
             }
+
+            $data['slug'] = Str::slug($data['name']);
 
             Product::query()->create($data);
 

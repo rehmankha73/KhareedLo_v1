@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
 
             $table->string('product_code');
             $table->string('name');
+            $table->string('slug');
             $table->string('description')->nullable();
             $table->decimal('unit_price')->default(0.0);
             $table->decimal('whole_sale_price')->default(0.0);

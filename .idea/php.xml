@@ -114,6 +114,8 @@
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-package-tools" />
       <path value="$PROJECT_DIR$/vendor/wire-elements/modal" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-model-status" />
+      <path value="$PROJECT_DIR$/vendor/darryldecode/cart" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

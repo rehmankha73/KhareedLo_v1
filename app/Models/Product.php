@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -18,6 +19,7 @@ class Product extends Model
         'product_category_id',
         'product_code',
         'name',
+        'slug',
         'description',
         'unit_price',
         'whole_sale_price',
@@ -44,6 +46,10 @@ class Product extends Model
         'in_stock' => 'boolean'
     ];
 
+    protected $appends = [
+        'featured_image_url',
+    ];
+
     public function product_category(): BelongsTo
     {
         return $this->belongsTo(ProductCategory::class);
@@ -67,6 +73,15 @@ class Product extends Model
     public function orders(): BelongsToMany
     {
         return $this->belongsToMany(Order::class);
+    }
+
+    public function getFeaturedImageUrlAttribute()
+    {
+        if (!Str::startsWith($this->featured_image, 'http')) {
+            return Storage::url($this->featured_image);
+        }
+
+        return $this->featured_image;
     }
 }
 
