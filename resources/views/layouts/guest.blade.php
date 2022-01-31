@@ -123,6 +123,36 @@
         </div>
     </nav>
 
+    {{--nav bar--}}
+    <div class="w-full flex flex-wrap items-center justify-center mt-0 px-6">
+        <nav>
+            <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                <li>
+                    <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                       href="{{ route('home') }}"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                       href="{{ route('products.index') }}"
+                    >
+                        Products
+                    </a>
+                </li>
+
+                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                       href="#">Services</a></li>
+                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                       href="#">Blog</a></li>
+                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                       href="#">Deals</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="w-full mt-0">
         {{ $slot }}
     </div>

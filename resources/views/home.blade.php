@@ -1,22 +1,4 @@
 <x-guest-layout>
-    {{--nav bar--}}
-    <div class="w-full flex flex-wrap items-center justify-center mt-0 px-6">
-        <nav>
-            <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                       href="#">Home</a></li>
-                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                       href="#">Products</a></li>
-                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                       href="#">Services</a></li>
-                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                       href="#">Blog</a></li>
-                <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                       href="#">Deals</a></li>
-            </ul>
-        </nav>
-    </div>
-
     {{--hero section--}}
     <header class="w-full bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right"
             style="max-width:1600px; height: 400px; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
