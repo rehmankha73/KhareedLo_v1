@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @livewireStyles
 </head>
 <body>
 
@@ -159,12 +161,14 @@
 
     <footer class="bg-white py-8 border-t border-gray-400">
 
-        <div class="container px-10 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+        <div
+            class="container px-10 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
             <div class="w-2/5 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                 <a href="#" class="inline-flex mx-auto tracking-tight items-center space-x-1 font-semibold text-lg">
                     <img class="w-28" src="assets/img/logo.svg" alt="logo">
                 </a>
-                <p class="mt-2 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus
+                <p class="mt-2 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                    vel mi ut felis tempus
                     commodo
                     nec id erat. Suspendisse consectetur dapibus velit ut lacinia.</p>
             </div>
@@ -265,7 +269,8 @@
         <a class="ml-3 text-gray-500">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                viewBox="0 0 24 24">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
           </svg>
         </a>
         <a class="ml-3 text-gray-500">
@@ -288,5 +293,6 @@
         </div>
     </footer>
 </div>
+@livewireScripts
 </body>
 </html>

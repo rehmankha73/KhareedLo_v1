@@ -43,151 +43,46 @@
     </div>
 
     <div class="w-2/3 px-4 pb-4">
+        @if($products->count() > 0)
+            <div>
+                @foreach($products as $product)
+                    <a href="{{ route('products.show' , ['slug' => $product->slug]) }}">
+                        <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
+                            <div>
+                                <img width="200" height="200" src="{{ $product->featured_image_url }}"
+                                     alt="Product image">
+                            </div>
 
-        <a href="{{ route('products.show' , 1) }}">
-            <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
-                <div>
-                    <img src="https://via.placeholder.com/640x480.png/00ff11?text=eos" alt="Product image">
-                </div>
+                            <div class="px-4 pb-4">
+                                <div class="mb-2">
+                                    <h1 class="font-bold text-xl">
+                                        {{ $product->name }}
+                                    </h1>
+                                    <span
+                                        class="font-bold text-sm text-gray-400">{{ $product->product_category->name }}</span>
+                                </div>
 
-                <div class="px-4 pb-4">
-                    <div class="mb-2">
-                        <h1 class="font-bold text-xl">
-                            Product
-                        </h1>
-                        <span class="font-bold text-sm text-gray-400">Product Category</span>
-                    </div>
+                                <div class="flex flex-row justify-between my-2">
+                                    <p class="text-lg text-yellow-400">{{ $product->unit_price }}</p>
+                                    <p class="text-sm text-gray-400">(103 Reviews)</p>
+                                </div>
 
-                    <div class="flex flex-row justify-between my-2">
-                        <p class="text-lg text-yellow-400">$789</p>
-                        <p class="text-sm text-gray-400">(103 Reviews)</p>
-                    </div>
+                                <p class="text-sm text-gray-400 my-4">
+                                    {{ substr($product->description, 0, 100) }}
+                                </p>
 
-                    <p class="text-sm text-gray-400 my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus illo labore, maxime
-                        neque quas voluptatum? Accusantium assumenda at consectetur consequatur doloribus minima,
-                        mollitia neque nesciunt officia quod, totam voluptatum?
-                    </p>
-
-                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
-        </a>
 
-        <a href="#">
-            <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
-                <div>
-                    <img src="https://via.placeholder.com/640x480.png/00ff11?text=eos" alt="Product image">
-                </div>
-
-                <div class="px-4 pb-4">
-                    <div class="mb-2">
-                        <h1 class="font-bold text-xl">
-                            Product
-                        </h1>
-                        <span class="font-bold text-sm text-gray-400">Product Category</span>
-                    </div>
-
-                    <div class="flex flex-row justify-between my-2">
-                        <p class="text-lg text-yellow-400">$789</p>
-                        <p class="text-sm text-gray-400">(103 Reviews)</p>
-                    </div>
-
-                    <p class="text-sm text-gray-400 my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus illo labore, maxime
-                        neque quas voluptatum? Accusantium assumenda at consectetur consequatur doloribus minima,
-                        mollitia neque nesciunt officia quod, totam voluptatum?
-                    </p>
-
-                </div>
+            <div>
+                {{ $products->links() }}
             </div>
-        </a>
-
-        <a href="#">
-            <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
-                <div>
-                    <img src="https://via.placeholder.com/640x480.png/00ff11?text=eos" alt="Product image">
-                </div>
-
-                <div class="px-4 pb-4">
-                    <div class="mb-2">
-                        <h1 class="font-bold text-xl">
-                            Product
-                        </h1>
-                        <span class="font-bold text-sm text-gray-400">Product Category</span>
-                    </div>
-
-                    <div class="flex flex-row justify-between my-2">
-                        <p class="text-lg text-yellow-400">$789</p>
-                        <p class="text-sm text-gray-400">(103 Reviews)</p>
-                    </div>
-
-                    <p class="text-sm text-gray-400 my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus illo labore, maxime
-                        neque quas voluptatum? Accusantium assumenda at consectetur consequatur doloribus minima,
-                        mollitia neque nesciunt officia quod, totam voluptatum?
-                    </p>
-
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
-                <div>
-                    <img src="https://via.placeholder.com/640x480.png/00ff11?text=eos" alt="Product image">
-                </div>
-
-                <div class="px-4 pb-4">
-                    <div class="mb-2">
-                        <h1 class="font-bold text-xl">
-                            Product
-                        </h1>
-                        <span class="font-bold text-sm text-gray-400">Product Category</span>
-                    </div>
-
-                    <div class="flex flex-row justify-between my-2">
-                        <p class="text-lg text-yellow-400">$789</p>
-                        <p class="text-sm text-gray-400">(103 Reviews)</p>
-                    </div>
-
-                    <p class="text-sm text-gray-400 my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus illo labore, maxime
-                        neque quas voluptatum? Accusantium assumenda at consectetur consequatur doloribus minima,
-                        mollitia neque nesciunt officia quod, totam voluptatum?
-                    </p>
-
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="bg-gray-50 rounded p-4 flex flex-row mb-4 rounded-md shadow-lg">
-                <div>
-                    <img src="https://via.placeholder.com/640x480.png/00ff11?text=eos" alt="Product image">
-                </div>
-
-                <div class="px-4 pb-4">
-                    <div class="mb-2">
-                        <h1 class="font-bold text-xl">
-                            Product
-                        </h1>
-                        <span class="font-bold text-sm text-gray-400">Product Category</span>
-                    </div>
-
-                    <div class="flex flex-row justify-between my-2">
-                        <p class="text-lg text-yellow-400">$789</p>
-                        <p class="text-sm text-gray-400">(103 Reviews)</p>
-                    </div>
-
-                    <p class="text-sm text-gray-400 my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus illo labore, maxime
-                        neque quas voluptatum? Accusantium assumenda at consectetur consequatur doloribus minima,
-                        mollitia neque nesciunt officia quod, totam voluptatum?
-                    </p>
-
-                </div>
-            </div>
-        </a>
+        @else
+            <span>No any product founds</span>
+        @endif
 
     </div>
 </div>
