@@ -55,7 +55,7 @@
                                 <p class="">
                                     {{ $product->name }}
                                 </p>
-                                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black"
+                                <svg class="h-6 w-6 text-gray-500 hover:text-black"
                                      xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 24 24">
                                     <path
