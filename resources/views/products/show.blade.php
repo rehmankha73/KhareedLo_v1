@@ -14,7 +14,7 @@
             </span>
         </nav>
 
-    @livewire('product-show', ['product' => $product])
+    @livewire('products.product-show', ['product' => $product])
     </section>
 
 </x-guest-layout>

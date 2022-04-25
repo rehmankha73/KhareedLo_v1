@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Products;
 
 use App\Models\Product;
 use Livewire\Component;
@@ -11,6 +11,6 @@ class ProductShow extends Component
 
     public function render()
     {
-        return view('livewire.product-show', ['products' => Product::query()->take(4)->get()]);
+        return view('livewire.products.product-show', ['products' => Product::query()->take(4)->get()]);
     }
 }

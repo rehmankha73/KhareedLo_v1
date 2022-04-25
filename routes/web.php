@@ -27,7 +27,4 @@ Route::get('/products/{slug}', [ProductController::class, 'show'])
 Route::get('/cart', CartViewController::class)
 ->name('cart');
 
-//Route::resource('/products', ProductController::class)
-//    ->only('index', 'show');
-
 

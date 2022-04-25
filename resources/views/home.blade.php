@@ -45,9 +45,10 @@
                 <div class="grid grid-cols-4 gap-6 p-6">
                     @foreach($products as $product)
                     <div class="col-span-1 border border-gray-300 rounded-md shadow-lg">
-                        <a href="#">
+                        <a href="{{ route('products.show', $product->slug) }}">
                             <img class="hover:grow hover:shadow-lg border-t rounded-t-md"
                                  src="{{ $product->featured_image }}"
+                                 alt="{{ $product->name }}"
                             >
 
                             <div class="p-3 flex items-center justify-between">
