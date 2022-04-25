@@ -55,6 +55,11 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class);
     }
 
+    public function wish_list(): BelongsTo
+    {
+        return $this->belongsTo(WishList::class);
+    }
+
     public function generateCode($num = 6)
     {
         $string = '0123456789';

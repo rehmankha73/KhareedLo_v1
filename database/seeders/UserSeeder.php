@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
+use App\Models\WishList;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Testing\Fluent\Concerns\Has;

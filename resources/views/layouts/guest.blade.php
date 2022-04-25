@@ -59,7 +59,10 @@
             {{--        </div>--}}
             <div class=" flex items-center">
                 <div class="pl-3 inline-block no-underline hover:text-black flex space-x-2">
-                    <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                    <a class="pl-3 inline-block no-underline hover:text-black" href="{{ route('cart') }}">
+                        <span class="badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-gray-100 bg-blue-500 rounded-full">
+                            0
+                        </span>
                         <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24"
                              height="24"
                              viewBox="0 0 24 24">

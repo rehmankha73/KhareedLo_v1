@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ProductCategory;
+use App\Models\WishList;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             ProductCategorySeeder::class,
             UserSeeder::class,
+            WishListSeeder::class,
         ]);
     }
 }

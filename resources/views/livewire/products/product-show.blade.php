@@ -1,4 +1,11 @@
 <div>
+    <div>
+        @if (session()->has('message'))
+            <div class="">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
     <div class="flex flex-row">
         <div class="w-1/5 px-2">
             <div class="mb-2">
@@ -49,13 +56,34 @@
             </div>
 
             <div class="flex flex-row space-x-2">
-{{--                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">--}}
-{{--                    Buy Now--}}
-{{--                </button>--}}
-
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Add to Cart
+                @if($product->in_wishlist)
+                <button
+                    wire:click="removeFromWishList({{ $product }})"
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Remove From WishList
                 </button>
+                @else
+                    <button
+                        wire:click="addToWishList({{ $product }})"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Add To WishList
+                    </button>
+                @endif
+
+                @if($product->in_cart)
+                    <button
+                        wire:click="removeFromCart({{ $product }})"
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Remove From Cart
+                    </button>
+                @else
+                    <button
+                        wire:click="addToCart({{ $product }})"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Add To Cart
+                    </button>
+                @endif
+
             </div>
 
             <div class="my-4">

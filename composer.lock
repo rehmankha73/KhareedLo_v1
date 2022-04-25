@@ -124,22 +124,22 @@
         },
         {
             "name": "darryldecode/cart",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darryldecode/laravelshoppingcart.git",
-                "reference": "2ad23e070af341da80300ef990b1fb529af88893"
+                "reference": "bc5ff0e1c7d20d621fa63b3218532f2ae7cbf841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darryldecode/laravelshoppingcart/zipball/2ad23e070af341da80300ef990b1fb529af88893",
-                "reference": "2ad23e070af341da80300ef990b1fb529af88893",
+                "url": "https://api.github.com/repos/darryldecode/laravelshoppingcart/zipball/bc5ff0e1c7d20d621fa63b3218532f2ae7cbf841",
+                "reference": "bc5ff0e1c7d20d621fa63b3218532f2ae7cbf841",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
-                "illuminate/translation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
-                "illuminate/validation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0",
+                "illuminate/translation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0",
+                "illuminate/validation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0",
                 "php": ">=7.3"
             },
             "require-dev": {
@@ -181,9 +181,9 @@
             ],
             "support": {
                 "issues": "https://github.com/darryldecode/laravelshoppingcart/issues",
-                "source": "https://github.com/darryldecode/laravelshoppingcart/tree/4.2.1"
+                "source": "https://github.com/darryldecode/laravelshoppingcart/tree/4.2.2"
             },
-            "time": "2020-12-18T03:01:17+00:00"
+            "time": "2022-02-11T14:04:34+00:00"
         },
         {
             "name": "doctrine/inflector",
