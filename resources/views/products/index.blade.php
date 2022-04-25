@@ -14,7 +14,7 @@
             </span>
         </nav>
 
-        @livewire('product-list')
+        @livewire('products.product-list')
     </section>
 
 </x-guest-layout>
