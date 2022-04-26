@@ -19,7 +19,7 @@ class ProductFactory extends Factory
             'slug' => $this->faker->slug,
             'description' => $this->faker->sentence,
             'brand' => $this->faker->word,
-            'unit_price' => random_int(1,1000),
+            'unit_price' => random_int(1,2000),
             'whole_sale_price' => random_int(1,1000),
             'initial_stock' => random_int(1,1000),
             'current_stock' => random_int(1,1000),
