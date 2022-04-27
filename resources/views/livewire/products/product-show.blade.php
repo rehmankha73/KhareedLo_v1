@@ -8,6 +8,7 @@
     </div>
     <div class="flex flex-row">
         <div class="w-1/5 px-2">
+
             <div class="mb-2">
                 <img width="250" height="200" src="{{ $product->featured_image_url }}"
                      alt="Product image">

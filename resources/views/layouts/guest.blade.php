@@ -59,7 +59,7 @@
             {{--        </div>--}}
             <div class=" flex items-center">
                 <div class="pl-3 inline-block no-underline hover:text-black flex space-x-2">
-                    @livewire('cart-in-nav')
+                    @livewire('cart.cart-in-nav')
                     @auth
                         <a href="{{ route('user.dashboard') }}"
                            class="inline-block text-sm text-gray-700 dark:text-gray-500 underline flex">

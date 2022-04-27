@@ -64,6 +64,7 @@ class ProductList extends Component
             'price' => $product->unit_price,
             'quantity' => 1,
             'attributes' => [
+                'image_url' => $product->featured_image_url,
                 'brand' => $product->brand,
                 'colors' => $product->colors,
                 'sizes' => $product->colors,
