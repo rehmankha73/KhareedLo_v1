@@ -29,6 +29,8 @@ class CheckoutController extends Controller
             }
         });
 
+        \Cart::clear();
+
         dd('Order Created');
     }
 }
