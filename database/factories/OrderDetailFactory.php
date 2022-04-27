@@ -19,7 +19,6 @@ class OrderDetailFactory extends Factory
             'price' =>  (double)random_int(1,1000),
             'sub_total' => (double)random_int(1,1000),
             'discount' => (double)random_int(1,1000),
-            'total' => (double)random_int(1,1000)
         ];
     }
 }

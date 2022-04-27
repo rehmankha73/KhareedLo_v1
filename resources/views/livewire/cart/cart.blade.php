@@ -135,7 +135,7 @@
                         <span>Total cost</span>
                         <span>$  {{ Cart::getTotal() }} </span>
                     </div>
-                    <a href=""
+                    <a href="{{ route('checkout') }}"
                        class="block text-center py-2 w-full bg-blue-500 font-semibold hover:bg-blue-600 text-sm text-white uppercase"
                     >
                         Checkout

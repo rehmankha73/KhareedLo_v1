@@ -29,10 +29,10 @@ class UserSeeder extends Seeder
             ]);
         }
 
-        User::factory()
-            ->has(Order::factory()->has(OrderDetail::factory(),'order_details')->count(3)
-                ->count(5), 'orders')
-            ->count(20)
-            ->create();
+//        User::factory()
+//            ->has(Order::factory()->has(OrderDetail::factory(),'order_details')->count(3)
+//                ->count(5), 'orders')
+//            ->count(20)
+//            ->create();
     }
 }

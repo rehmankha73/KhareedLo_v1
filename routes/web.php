@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartViewController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +27,8 @@ Route::get('/products/{slug}', [ProductController::class, 'show'])
 
 Route::get('/cart', CartViewController::class)
 ->name('cart');
+
+Route::get('/checkout', CheckoutController::class)
+    ->name('checkout');
 
 

@@ -17,7 +17,6 @@ class OrderDetail extends Model
         'price',
         'sub_total',
         'discount',
-        'total',
     ];
 
     public function product(): BelongsTo

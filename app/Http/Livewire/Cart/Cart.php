@@ -22,6 +22,7 @@ class Cart extends Component
             \Cart::update($id, [
                 'quantity' => 1
             ]);
+            $this->emit('refreshCart');
 
         }
     }
@@ -39,6 +40,7 @@ class Cart extends Component
             \Cart::update($key, [
                 'quantity' => -1
             ]);
+            $this->emit('refreshCart');
         }
     }
 

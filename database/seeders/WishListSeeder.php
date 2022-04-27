@@ -17,7 +17,7 @@ class WishListSeeder extends Seeder
     {
         $total_product = Product::query()->count();
         foreach (User::query()->get() as $user) {
-            $user->products_in_wishlist()->create(['product_id' => random_int(1, (int)$total_product)]);
+            $user->wishlist()->create(['product_id' => random_int(1, (int)$total_product)]);
         }
 
     }

@@ -33,7 +33,6 @@ class CreateOrderDetailsTable extends Migration
 
             $table->decimal('sub_total')->default(0.0);
             $table->decimal('discount')->default(0.0);
-            $table->decimal('total')->default(0.0);
 
             $table->timestamps();
         });
