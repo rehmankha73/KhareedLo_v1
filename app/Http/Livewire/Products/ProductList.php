@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class ProductList extends Component
 {
     use WithPagination;
+    public $user;
 
     public $search;
     public $selected_categories = [];
@@ -17,6 +18,10 @@ class ProductList extends Component
     public $sortBy;
 
     protected $queryString = ['search'];
+
+    public function mount() {
+        $this->user = auth()->user();
+    }
 
     public function render()
     {
@@ -42,8 +47,8 @@ class ProductList extends Component
 
 
         $products->each(function ($product) {
-            $in_wishlist = auth()->user()->wishlist()->where('product_id', $product->id)->first();
-            $product->in_wishlist = !empty((boolean)$in_wishlist);
+            $in_wishlist = $this->user ? $this->user->wishlist()->where('product_id', $product->id)->first() : false;
+            $product->in_wishlist = (boolean)$in_wishlist;
             $in_cart = \Cart::get($product->id);
             $product->in_cart = !empty($in_cart);
         });
@@ -94,7 +99,11 @@ class ProductList extends Component
 
     public function addToWishList(Product $product)
     {
-        auth()->user()->wishlist()->create(['product_id' => (int)$product->id]);
+        if(!$this->user) {
+            return redirect()->route('user.login');
+        }
+
+        $this->user->wishlist()->create(['product_id' => (int)$product->id]);
 
         session()->flash('message', 'Product has been added in Wish List!');
         return $this->render();
@@ -102,9 +111,17 @@ class ProductList extends Component
 
     public function removeFromWishList(Product $product)
     {
-        auth()->user()->wishlist()->where('product_id', $product->id)->first()->delete();
+        if(!$this->user) {
+            return redirect()->route('user.login');
+        }
+
+        $this->user->wishlist()->where('product_id', $product->id)->first()->delete();
 
         session()->flash('message', 'Product has been removed from Wish List!');
         return $this->render();
+    }
+
+    public function goToCart(){
+        return redirect()->route('cart');
     }
 }

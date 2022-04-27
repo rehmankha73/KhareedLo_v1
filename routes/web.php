@@ -20,13 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('/products', [ProductController::class, 'index'])
-->name('products.index');
+    ->name('products.index');
 
 Route::get('/products/{slug}', [ProductController::class, 'show'])
     ->name('products.show');
 
 Route::get('/cart', CartViewController::class)
-->name('cart');
+    ->middleware('auth')
+    ->name('cart');
 
 Route::get('/checkout', CheckoutController::class)
     ->name('checkout');

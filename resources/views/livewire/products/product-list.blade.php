@@ -79,7 +79,8 @@
         @if($products->count() > 0)
             <div>
                 @foreach($products as $product)
-                    <div class="bg-gray-50 rounded p-4 flex flex-row justify-start items-center mb-4 rounded-md space-x-4">
+                    <div
+                        class="bg-gray-50 rounded p-4 flex flex-row justify-start items-center mb-4 rounded-md space-x-4">
                         <div class="w-1/4">
                             <a href="{{ route('products.show' , ['slug' => $product->slug]) }}">
                                 <img width="200" height="200" src="{{ $product->featured_image_url }}"
@@ -99,12 +100,14 @@
                             </div>
 
                             <p class="text-sm text-gray-400 my-4">
-{{--                                {{ $product->description }}--}}
                                 {{ substr($product->description, 0, 100) }}
                             </p>
 
                             <div class="mt-6 w-1/2 flex flex-row items-center space-x-2">
-                                <button class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
+                                @auth
+                                <button
+                                    wire:click="goToCart"
+                                    class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
                                 >
                                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -116,10 +119,11 @@
                                     </svg>
                                     <span class="ml-3">Cart</span>
                                 </button>
+                                @endauth
 
                                 @if($product->in_wishlist)
                                     <button wire:click="removeFromWishList({{ $product }})"
-                                            class="flex w-full bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+                                            class="flex w-1/2 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
                                     >
                                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +135,7 @@
                                     </button>
                                 @else
                                     <button wire:click="addToWishList({{ $product }})"
-                                            class="flex w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                                            class="flex w-1/2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                                     >
                                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -156,46 +160,46 @@
                                 <p class="text-sm text-gray-400">(103 Reviews)</p>
                             </div>
 
-{{--                            <div class="my-2 flex flex-row items-center space-x-2">--}}
-{{--                                <button class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"--}}
-{{--                                >--}}
-{{--                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
-{{--                                         xmlns="http://www.w3.org/2000/svg">--}}
-{{--                                        <path--}}
-{{--                                            d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>--}}
-{{--                                        <path fill-rule="evenodd"--}}
-{{--                                              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"--}}
-{{--                                              clip-rule="evenodd"></path>--}}
-{{--                                    </svg>--}}
-{{--                                    <span class="ml-3">Cart</span>--}}
-{{--                                </button>--}}
+                            {{--                            <div class="my-2 flex flex-row items-center space-x-2">--}}
+                            {{--                                <button class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"--}}
+                            {{--                                >--}}
+                            {{--                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
+                            {{--                                         xmlns="http://www.w3.org/2000/svg">--}}
+                            {{--                                        <path--}}
+                            {{--                                            d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>--}}
+                            {{--                                        <path fill-rule="evenodd"--}}
+                            {{--                                              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"--}}
+                            {{--                                              clip-rule="evenodd"></path>--}}
+                            {{--                                    </svg>--}}
+                            {{--                                    <span class="ml-3">Cart</span>--}}
+                            {{--                                </button>--}}
 
-{{--                                @if($product->in_wishlist)--}}
-{{--                                    <button wire:click="removeFromWishList({{ $product }})"--}}
-{{--                                            class="flex w-full bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"--}}
-{{--                                    >--}}
-{{--                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
-{{--                                             xmlns="http://www.w3.org/2000/svg">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"--}}
-{{--                                                  clip-rule="evenodd"></path>--}}
-{{--                                        </svg>--}}
-{{--                                        <span class="ml-3">Added</span>--}}
-{{--                                    </button>--}}
-{{--                                @else--}}
-{{--                                    <button wire:click="addToWishList({{ $product }})"--}}
-{{--                                            class="flex w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"--}}
-{{--                                    >--}}
-{{--                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
-{{--                                             xmlns="http://www.w3.org/2000/svg">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"--}}
-{{--                                                  clip-rule="evenodd"></path>--}}
-{{--                                        </svg>--}}
-{{--                                        <span class="ml-3">Add</span>--}}
-{{--                                    </button>--}}
-{{--                                @endif--}}
-{{--                            </div>--}}
+                            {{--                                @if($product->in_wishlist)--}}
+                            {{--                                    <button wire:click="removeFromWishList({{ $product }})"--}}
+                            {{--                                            class="flex w-full bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"--}}
+                            {{--                                    >--}}
+                            {{--                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
+                            {{--                                             xmlns="http://www.w3.org/2000/svg">--}}
+                            {{--                                            <path fill-rule="evenodd"--}}
+                            {{--                                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"--}}
+                            {{--                                                  clip-rule="evenodd"></path>--}}
+                            {{--                                        </svg>--}}
+                            {{--                                        <span class="ml-3">Added</span>--}}
+                            {{--                                    </button>--}}
+                            {{--                                @else--}}
+                            {{--                                    <button wire:click="addToWishList({{ $product }})"--}}
+                            {{--                                            class="flex w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"--}}
+                            {{--                                    >--}}
+                            {{--                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"--}}
+                            {{--                                             xmlns="http://www.w3.org/2000/svg">--}}
+                            {{--                                            <path fill-rule="evenodd"--}}
+                            {{--                                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"--}}
+                            {{--                                                  clip-rule="evenodd"></path>--}}
+                            {{--                                        </svg>--}}
+                            {{--                                        <span class="ml-3">Add</span>--}}
+                            {{--                                    </button>--}}
+                            {{--                                @endif--}}
+                            {{--                            </div>--}}
 
                             <div class="mt-10">
                                 @if($product->in_cart)
