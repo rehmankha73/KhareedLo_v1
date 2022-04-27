@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.8",
+        "spatie/laravel-collection-macros": "^7.11",
         "spatie/laravel-model-status": "^1.10",
         "wire-elements/modal": "^1.0"
     },

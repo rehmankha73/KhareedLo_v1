@@ -53,7 +53,7 @@ class ProductList extends Component
             $product->in_cart = !empty($in_cart);
         });
 
-        return $products;
+        return $products->paginate(5);
     }
 
     private function getCategories()

@@ -19,7 +19,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
@@ -116,6 +115,11 @@
       <path value="$PROJECT_DIR$/vendor/wire-elements/modal" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-model-status" />
       <path value="$PROJECT_DIR$/vendor/darryldecode/cart" />
+      <path value="$PROJECT_DIR$/vendor/league/config" />
+      <path value="$PROJECT_DIR$/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-collection-macros" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

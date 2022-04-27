@@ -26,7 +26,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
@@ -123,6 +122,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/wire-elements/modal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-model-status" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/darryldecode/cart" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-collection-macros" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

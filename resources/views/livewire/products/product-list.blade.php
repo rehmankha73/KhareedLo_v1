@@ -65,8 +65,7 @@
     </div>
 
     <div class="w-2/3 px-4 pb-4">
-        <section class="flex flex-row justify-between items-center py-2 mb-4">
-            <span>Showing 12 out of 100</span>
+        <section class="flex flex-row justify-end items-center py-2 mb-4">
             <label>
                 <select wire:model="sortBy">
                     <option value="" selected> Sort By Name:</option>
@@ -105,20 +104,20 @@
 
                             <div class="mt-6 w-1/2 flex flex-row items-center space-x-2">
                                 @auth
-                                <button
-                                    wire:click="goToCart"
-                                    class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
-                                >
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                        <path fill-rule="evenodd"
-                                              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                                              clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span class="ml-3">Cart</span>
-                                </button>
+                                    <button
+                                        wire:click="goToCart"
+                                        class="flex w-full bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
+                                    >
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                            <path fill-rule="evenodd"
+                                                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="ml-3">Cart</span>
+                                    </button>
                                 @endauth
 
                                 @if($product->in_wishlist)
@@ -222,7 +221,7 @@
             </div>
 
             <div>
-                {{--                {{ $products->links() }}--}}
+                {{ $products->links() }}
             </div>
         @else
             <span>No any product founds</span>
